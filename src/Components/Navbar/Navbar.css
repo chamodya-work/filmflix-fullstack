@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Added box-sizing for better control of layout */
+}
+
+:root {
+  --color-blue: #297eff; /* Blue color for hover effect */
+  --color-gray: #858585; /* Soft gray for text */
+  --color-light-gray: #c8c6cf; /* Light gray for subtle text */
+}
+
+body {
+  font-family: "Roboto", sans-serif; /* Ensures consistency in fonts */
+}
+
+.navBar {
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3); /* Slight transparent background */
+  padding: 0 10px; /* Added padding for better spacing */
+}
+
+.navBar__image {
+  height: 250px;
+  width: 250px;
+  margin-left: 10px;
+}
+
+.navBar__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintains aspect ratio */
+}
+
+.navBar__user {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+.navBar__user div {
+  display: flex;
+  align-items: center;
+  color: var(--color-light-gray);
+  cursor: pointer;
+}
+
+.navBar__user div img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Round user image */
+}
+
+.navBar__user div p {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.navBar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navBar ul li {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--color-gray);
+  margin: 10px 25px;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.navBar ul li:hover {
+  color: var(--color-blue);
+  text-shadow: 0 0 12px var(--color-blue); /* Subtle glowing effect */
+}
+
+.offcanvas-logo {
+  text-align: center;
+}
+
+.app-logo {
+  width: 60%;
+  height: 60%;
+}
+.offcanvas-logo {
+  margin: 0; /* Removes any margin */
+  padding: 0; /* Optional: removes padding if needed */
+}
+
+.offcanvas-logo img {
+  margin: 0; /* Removes margin from the image */
+}
+
+.offcanvas-logo p {
+  margin: 0; /* Removes margin from the paragraph */
+}
+
+.offcanvas-body p {
+  margin-top: 0px;
+  font-size: 1.1rem;
+  color: var(--color-light-gray);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: flex-start; /* Align items to the left */
+    height: auto; /* Allow navbar height to adjust dynamically */
+  }
+
+  .navBar__image {
+    height: 200px;
+    width: 200px;
+  }
+
+  .navBar__user {
+    margin-right: 3%;
+  }
+
+  .navBar ul {
+    flex-direction: column; /* Stack navbar items vertically */
+    margin-top: 15px;
+  }
+
+  .navBar ul li {
+    font-size: 1rem;
+    margin: 10px 0; /* Adjusted for spacing */
+  }
+}

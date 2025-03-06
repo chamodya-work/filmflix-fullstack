@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+	opacity: 0;
+	animation: fadein forwards;
+	animation-duration: 1.5s;
+}
+
+.wrapper__movie {
+	background-image: linear-gradient(120deg,
+			rgb(1, 2, 14),
+			rgb(9, 8, 66),
+			rgb(1, 2, 14));
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	padding-bottom: 100px; /* Increased bottom padding */
+}
+
+.movie-heading {
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--color-blue);
+	margin-top: 100px;
+	margin-bottom: 60px;
+}
+
+.movie_scroll-wrapper {
+	width: 95%;
+	height: 350px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px; /* Rounded borders */
+	overflow: hidden;
+}
+
+.movie_scroll-wrapper > div:nth-child(2) {
+	height: 100%;
+	width: 40%;
+	pointer-events: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: linear-gradient(90deg, rgb(2, 4, 32), rgba(0, 0, 0, 0));
+}
+
+.movie_scroll-wrapper > div:last-child {
+	height: 100%;
+	width: 40%;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-image: linear-gradient(270deg, rgb(1, 3, 26), rgba(0, 0, 0, 0));
+}
+
+.scroll-content {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	overflow: scroll;
+	display: flex;
+	align-items: center;
+	border-radius: 15px; /* Rounded borders */
+}
+
+.scroll-content::-webkit-scrollbar {
+	display: none;
+}
+
+/* Improved effect for images sliding from left to right */
+.scroll-content > img {
+	height: 90%;
+	width: auto;
+	margin: 0 10px;
+	transition: 0.5s ease-in-out;
+	border-radius: 10px; /* Rounded borders for images */
+	opacity: 0;
+	transform: translateX(-100%);
+	animation: popInLeft 1s ease-out forwards;
+}
+
+/* Apply delays to images to ensure smooth sequence */
+.scroll-content > img:nth-child(1) {
+	animation-delay: 0.3s;
+}
+
+.scroll-content > img:nth-child(2) {
+	animation-delay: 0.6s;
+}
+
+.scroll-content > img:nth-child(3) {
+	animation-delay: 0.9s;
+}
+
+.scroll-content > img:nth-child(4) {
+	animation-delay: 1.2s;
+}
+
+.scroll-content > img:nth-child(5) {
+	animation-delay: 1.5s;
+}
+
+.scroll-content > img:nth-child(6) {
+	animation-delay: 1.8s;
+}
+
+.scroll-content > img:nth-child(7) {
+	animation-delay: 2.1s;
+}
+
+.scroll-content > img:nth-child(8) {
+	animation-delay: 2.4s;
+}
+
+/* Smooth transition effect with sliding and fading in */
+@keyframes popInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Hover effect to zoom in and add a shadow */
+.scroll-content > img:hover {
+	scale: 110%;
+	opacity: 1;
+	box-shadow: 0 0 20px var(--color-blue);
+}
+
+.movie-trailer {
+	display: block;
+	margin-bottom: 50px;
+	border-radius: 10px; /* Rounded borders */
+}
+
+/* Fade-in effect for the whole page */
+@keyframes fadein {
+	to {
+		opacity: 1;
+	}
+}
